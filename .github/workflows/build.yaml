@@ -15,7 +15,7 @@ jobs:
       matrix:
         include:
           - context: ./.devcontainer
-            file: Dockerfile
+            file: ./.devcontainer/Dockerfile
             image: ghcr.io/marijnvanwezel/haskell-dev-env
 
     permissions:
