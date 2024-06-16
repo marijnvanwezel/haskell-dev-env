@@ -1,6 +1,7 @@
 {
   "name": "DevContainer for Haskell (GHC, Stack, Cabal, HIE, LSP, DAP, etc.)",
   "remoteUser": "devcontainer",
+  "containerUser": "devcontainer",
   "runArgs": [],
   "image": "ghcr.io/marijnvanwezel/haskell-dev-env:master",
   "customizations": {
