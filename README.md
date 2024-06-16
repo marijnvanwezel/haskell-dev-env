@@ -1,20 +1,21 @@
 # A development container for Haskell
 
-This is a [DevContainer](https://containers.dev) for Haskell (GHC 9.6.5).
+This is a [Dev Container](https://containers.dev) for Haskell (GHC 9.6.5).
 
-## How to use this
+## Using with Visual Studio Code
 
-Follow the [Getting Started](https://code.visualstudio.com/docs/remote/containers#_getting-started) instructions to configure Visual Studio Code and Docker for use with DevContainers.
+Follow the steps below to use the Dev Container with Visual Studio Code:
 
-Place the `.devcontainer` directory in the root of your project. The next time you load the project, Visual Studio Code should prompt to re-open the project in a container:
+1. Follow the [Getting Started](https://code.visualstudio.com/docs/remote/containers#_getting-started) instructions to configure Visual Studio Code and Docker for use with Dev Containers;
+2. Place the `.devcontainer` folder in this repository in the root of your project;
+3. Reload the project opening the command palette (`Ctrl` + `Shift` + `P` or `Cmd` + `Shift` + `P`) and executing the command `>Reload Window` or by closing and re-opening Visual Studio Code;
+4. Click `Reopen in Container` when Visual Studio Code prompts you (see image below), or by opening the command palette (`Ctrl` + `Shift` + `P` or `Cmd` + `Shift` + `P`) and executing the command `>Dev Containers: Reopen in Container`.
 
 ![image](https://user-images.githubusercontent.com/601206/73298150-7bfac580-4215-11ea-81d3-a8fabab98e30.png)
 
 ## How does it work
 
-Visual Studio Code supports [DevContainers](https://code.visualstudio.com/docs/remote/containers) (i.e. using a Docker image as a development environment). It automates the hassle of setting up a proper development environment.
-
-Pressing **Reopen in Container** will perform the automated steps to launch the container, and will set up a complete Haskell development environment.
+Visual Studio Code supports [Dev Containers](https://code.visualstudio.com/docs/remote/containers) (i.e. using a Docker image as a development environment). It automates the hassle of setting up a proper development environment.
 
 ## What's in the box
 
@@ -26,7 +27,7 @@ The container comes with the following (relevant) software pre-installed:
 * [GHCUp](https://www.haskell.org/ghcup/);
 * The [Glasgow Haskell Compiler (GHC)](https://www.haskell.org/ghc/);
 * The [Haskell Language Server (HLS)](https://github.com/haskell/haskell-language-server);
-* [Stack]https://docs.haskellstack.org/en/stable/);
+* [Stack](https://docs.haskellstack.org/en/stable/);
 * [Cabal](https://www.haskell.org/cabal/).
 
 Following VSCode extensions are automatically installed after container is started:
