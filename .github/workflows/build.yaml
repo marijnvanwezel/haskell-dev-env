@@ -3,7 +3,7 @@ name: Build development container
 on:
   push:
     paths:
-      - '.devcontainer/Dockerfile'
+      - 'Dockerfile'
       - '.github/workflows/build.yaml'
 
 jobs:
