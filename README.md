@@ -1,15 +1,16 @@
 # A development container for Haskell
 
-This is a [Dev Container](https://containers.dev) for Haskell (GHC 9.6.5).
+This is an opinionated pre-built [Dev Container](https://containers.dev) for Haskell (GHC 9.6.5).
 
 ## Using with Visual Studio Code
 
 Follow the steps below to use the Dev Container with Visual Studio Code:
 
 1. Follow the [Getting Started](https://code.visualstudio.com/docs/remote/containers#_getting-started) instructions to configure Visual Studio Code and Docker for use with Dev Containers;
-2. Place the `.devcontainer` folder in this repository in the root of your project;
+2. Copy the `.devcontainer` folder in this repository to the root of your project;
 3. Reload the project opening the command palette (`Ctrl` + `Shift` + `P` or `Cmd` + `Shift` + `P`) and executing the command `>Reload Window` or by closing and re-opening Visual Studio Code;
-4. Click `Reopen in Container` when Visual Studio Code prompts you (see image below), or by opening the command palette (`Ctrl` + `Shift` + `P` or `Cmd` + `Shift` + `P`) and executing the command `>Dev Containers: Reopen in Container`.
+4. Click `Reopen in Container` when Visual Studio Code prompts you (see image below), or by opening the command palette (`Ctrl` + `Shift` + `P` or `Cmd` + `Shift` + `P`) and executing the command `>Dev Containers: Reopen in Container`;
+5. (Optional) Copy the `.ghci` file in this repository to the root of your project.
 
 ![image](https://user-images.githubusercontent.com/601206/73298150-7bfac580-4215-11ea-81d3-a8fabab98e30.png)
 
@@ -25,7 +26,7 @@ The container comes with the following (relevant) software pre-installed:
 * [GNU Bash](https://www.gnu.org/software/bash/);
 * [Git](http://git-scm.com/docs/git-clean);
 * [GHCUp](https://www.haskell.org/ghcup/);
-* The [Glasgow Haskell Compiler (GHC)](https://www.haskell.org/ghc/);
+* The [Glasgow Haskell Compiler (GHC)](https://www.haskell.org/ghc/) (version 9.6.5);
 * The [Haskell Language Server (HLS)](https://github.com/haskell/haskell-language-server);
 * [Stack](https://docs.haskellstack.org/en/stable/);
 * [Cabal](https://www.haskell.org/cabal/).
