@@ -1,20 +1,8 @@
 {
   "name": "DevContainer for Haskell (GHC, Stack, Cabal, HIE, LSP, DAP, etc.)",
-  "remoteUser": "vscode",
+  "remoteUser": "devcontainer",
   "runArgs": [],
-  "build": {
-    "args": {
-      "USERNAME": "vscode",
-      "GHC_VERSION": "9.6.3",
-      "STACK_VERSION": "recommended",
-      "STACK_RESOLVER": "nightly",
-      "CABAL_VERSION": "recommended",
-      "HLS_VERSION": "recommended",
-      "LLVM_VERSION": "17"
-    },
-    "context": "..",
-    "dockerfile": "Dockerfile"
-  },
+  "image": "ghcr.io/marijnvanwezel/haskell-dev-env",
   "customizations": {
     "vscode": {
       "extensions": [
