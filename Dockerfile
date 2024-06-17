@@ -1,6 +1,6 @@
 FROM debian:bookworm-slim
 
-ARG GHC_VERSION=9.8.2
+ARG GHC_VERSION=9.6.5
 ARG STACK_VERSION=recommended
 ARG STACK_RESOLVER=nightly
 ARG CABAL_VERSION=recommended
