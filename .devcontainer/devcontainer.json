@@ -2,8 +2,7 @@
   "name": "DevContainer for Haskell (GHC, Stack, Cabal, HIE, LSP, DAP, etc.)",
   "remoteUser": "devcontainer",
   "containerUser": "devcontainer",
-  "updateRemoteUserUID": true,
-  "runArgs": [],
+  "runArgs": ["--userns=keep-id"],
   "image": "ghcr.io/marijnvanwezel/haskell-dev-env:master",
   "customizations": {
     "vscode": {
