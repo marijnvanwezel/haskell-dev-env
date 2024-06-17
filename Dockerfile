@@ -1,10 +1,10 @@
 FROM debian:bookworm-slim
 
-ARG GHC_VERSION=9.4.8
-ARG STACK_VERSION=2.15.5
+ARG GHC_VERSION=9.8.2
+ARG STACK_VERSION=recommended
 ARG STACK_RESOLVER=nightly
-ARG CABAL_VERSION=3.10.3.0
-ARG HLS_VERSION=2.8.0.0
+ARG CABAL_VERSION=recommended
+ARG HLS_VERSION=latest
 
 ENV LANG=C.UTF-8 \
     USERNAME=devcontainer \
@@ -68,8 +68,7 @@ RUN cabal user-config update -f && \
 # Configure Stack
 RUN ((stack ghc -- --version 2>/dev/null) || true) && \
     stack config --system-ghc set system-ghc true --global && \
-    stack config --system-ghc set install-ghc false --global && \
-    stack config --system-ghc set resolver ${STACK_RESOLVER}
+    stack config --system-ghc set install-ghc false --global
 RUN printf "ghc-options:\n  \"\$everything\": -haddock\n" >> /home/${USERNAME}/.stack/config.yaml
 
 # Install useful dependencies
