@@ -8,7 +8,7 @@ Follow the steps below to use the Dev Container with Visual Studio Code:
 
 1. Follow the [Getting Started](https://code.visualstudio.com/docs/remote/containers#_getting-started) instructions to configure Visual Studio Code and Docker for use with Dev Containers;
 2. Copy the `.devcontainer` folder in this repository to the root of your project;
-3. Reload the project opening the command palette (`Ctrl` + `Shift` + `P` or `Cmd` + `Shift` + `P`) and executing the command `>Reload Window` or by closing and re-opening Visual Studio Code;
+3. Reload the project by opening the command palette (`Ctrl` + `Shift` + `P` or `Cmd` + `Shift` + `P`) and executing the command `>Reload Window` or by closing and re-opening Visual Studio Code;
 4. Click `Reopen in Container` when Visual Studio Code prompts you (see image below), or by opening the command palette (`Ctrl` + `Shift` + `P` or `Cmd` + `Shift` + `P`) and executing the command `>Dev Containers: Reopen in Container`;
 5. (Optional) Copy the `.ghci` file in this repository to the root of your project.
 
