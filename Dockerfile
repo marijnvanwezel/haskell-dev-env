@@ -7,9 +7,6 @@ ARG CABAL_VERSION=recommended
 ARG HLS_VERSION=latest
 
 ENV LANG=C.UTF-8 \
-    USERNAME=devcontainer \
-    USER_UID=1000 \
-    USER_GID=1000 \
     DEBIAN_FRONTEND=noninteractive \
     BOOTSTRAP_HASKELL_NONINTERACTIVE=yes \
     BOOTSTRAP_HASKELL_NO_UPGRADE=yes \
@@ -39,17 +36,13 @@ RUN apt-get update --yes && \
         sudo \
         zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
-RUN groupadd --gid ${USER_GID} ${USERNAME} && \
-    useradd -ms /bin/bash -K MAIL_DIR=/dev/null --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} && \
-    echo ${USERNAME} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${USERNAME} && \
-    chmod 0440 /etc/sudoers.d/${USERNAME}
-
-USER ${USER_UID}:${USER_GID}
-WORKDIR /home/${USERNAME}
 
 # Add GHCUp and Cabal to the PATH
-ENV PATH="/home/${USERNAME}/.local/bin:/home/${USERNAME}/.cabal/bin:/home/${USERNAME}/.ghcup/bin:$PATH"
-RUN echo "export PATH=${PATH}" >> /home/${USERNAME}/.profile
+ENV PATH=${PATH}:/root/.local/bin
+ENV PATH=${PATH}:/root/.ghcup/bin
+ENV PATH=${PATH}:/root/.cabal/bin
+
+RUN echo "export PATH=${PATH}" >> /root/.profile
 
 # Download and install GHCUp
 RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
@@ -69,7 +62,7 @@ RUN cabal user-config update -f && \
 RUN ((stack ghc -- --version 2>/dev/null) || true) && \
     stack config --system-ghc set system-ghc true --global && \
     stack config --system-ghc set install-ghc false --global
-RUN printf "ghc-options:\n  \"\$everything\": -haddock\n" >> /home/${USERNAME}/.stack/config.yaml
+RUN printf "ghc-options:\n  \"\$everything\": -haddock\n" >> ~/.stack/config.yaml
 
 # Install useful dependencies
 RUN cabal update && \
