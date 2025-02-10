@@ -1,10 +1,9 @@
 FROM debian:bookworm-slim
 
-ARG GHC_VERSION=9.8.2
+ARG GHC_VERSION=9.4.8
 ARG STACK_VERSION=recommended
-ARG STACK_RESOLVER=nightly
 ARG CABAL_VERSION=recommended
-ARG HLS_VERSION=latest
+ARG HLS_VERSION=recommended
 
 ENV LANG=C.UTF-8 \
     DEBIAN_FRONTEND=noninteractive \
@@ -12,7 +11,6 @@ ENV LANG=C.UTF-8 \
     BOOTSTRAP_HASKELL_NO_UPGRADE=yes \
     GHC_VERSION=${GHC_VERSION} \
     STACK_VERSION=${STACK_VERSION} \
-    STACK_RESOLVER=${STACK_RESOLVER} \
     CABAL_VERSION=${CABAL_VERSION} \
     HLS_VERSION=${HLS_VERSION}
 
@@ -82,4 +80,5 @@ RUN cabal update && \
 RUN hoogle generate --download --haskell
 
 ENV DEBIAN_FRONTEND=dialog
+
 ENTRYPOINT ["/bin/bash"]
