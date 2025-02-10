@@ -1,7 +1,9 @@
 FROM debian:bookworm-slim
 
-ARG GHC_VERSION=9.4.8
+# https://www.stackage.org/lts-23.8
+ARG GHC_VERSION=9.8.4
 ARG STACK_VERSION=recommended
+ARG STACK_RESOLVER=lts-23.8
 ARG CABAL_VERSION=recommended
 ARG HLS_VERSION=recommended
 
@@ -59,7 +61,8 @@ RUN cabal user-config update -f && \
 # Configure Stack
 RUN ((stack ghc -- --version 2>/dev/null) || true) && \
     stack config --system-ghc set system-ghc true --global && \
-    stack config --system-ghc set install-ghc false --global
+    stack config --system-ghc set install-ghc false --global && \
+    stack config --system-ghc set resolver lts-23.8
 RUN printf "ghc-options:\n  \"\$everything\": -haddock\n" >> ~/.stack/config.yaml
 
 # Install useful dependencies
