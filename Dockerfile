@@ -69,13 +69,13 @@ RUN cabal update && \
     cabal install --haddock-hoogle --minimize-conflict-set \
         fsnotify-0.4.1.0 \
         haskell-dap-0.0.16.0 \
-        ghci-dap-0.0.24.0 \
-        haskell-debug-adapter-0.0.41.0 \
-        hlint-3.10 \
-        apply-refact-0.15.0.0 \
+        ghci-dap-0.0.22.0 \
+        haskell-debug-adapter-0.0.38.0 \
+        hlint-3.8 \
+        apply-refact-0.14.0.0 \
         retrie-1.2.3 \
         hoogle-5.0.18.4 \
-        ormolu-0.8.0.0 \
+        ormolu-0.7.4.0 \
         implicit-hie-0.1.4.0
 
 # Download local Hoogle database
