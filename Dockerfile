@@ -81,8 +81,5 @@ RUN cabal update && \
 # Download local Hoogle database
 RUN hoogle generate --download --haskell
 
-# Install implicit-hie
-RUN stack install implicit-hie
-
 ENV DEBIAN_FRONTEND=dialog
 ENTRYPOINT ["/bin/bash"]
