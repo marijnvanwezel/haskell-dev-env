@@ -1,6 +1,6 @@
 # A development container for Haskell
 
-This is an opinionated pre-built [Dev Container](https://containers.dev) for Haskell (GHC 9.4.8).
+This is an opinionated pre-built [Dev Container](https://containers.dev) for Haskell (GHC 9.8.2).
 
 ## Using with Visual Studio Code
 
@@ -22,14 +22,27 @@ Visual Studio Code supports [Dev Containers](https://code.visualstudio.com/docs/
 
 The container comes with the following (relevant) software pre-installed:
 
-* [`debian:bookworm-slim`](https://hub.docker.com/_/debian) as a base image;
-* [GNU Bash](https://www.gnu.org/software/bash/);
-* [Git](http://git-scm.com/docs/git-clean);
-* [GHCUp](https://www.haskell.org/ghcup/);
-* The [Glasgow Haskell Compiler (GHC)](https://www.haskell.org/ghc/) (version 9.4.8);
-* The [Haskell Language Server (HLS)](https://github.com/haskell/haskell-language-server);
-* [Stack](https://docs.haskellstack.org/en/stable/);
-* [Cabal](https://www.haskell.org/cabal/).
+- [`debian:bookworm-slim`](https://hub.docker.com/_/debian) as a base image;
+- [GNU Bash](https://www.gnu.org/software/bash/);
+- [Git](https://git-scm.com/);
+- [GHCUp](https://www.haskell.org/ghcup/);
+- The [Glasgow Haskell Compiler (GHC)](https://www.haskell.org/ghc/) (version 9.8.2);
+- The [Haskell Language Server (HLS)](https://github.com/haskell/haskell-language-server);
+- [Stack](https://docs.haskellstack.org/en/stable/);
+- [Cabal](https://www.haskell.org/cabal/).
+
+The following packages come pre-installed:
+
+- [fsnotify](https://hackage.haskell.org/package/fsnotify) - cross platform library for file creation, modification, and deletion notification;
+- [haskell-dap](https://hackage.haskell.org/package/haskell-dap) - Haskell implementation of the DAP interface data;
+- [ghci-dap](https://hackage.haskell.org/package/ghci-dap) - a GHCi with DAP machine interface;
+- [haskell-debug-adapter](https://hackage.haskell.org/package/haskell-debug-adapter) - a debug adapter for Haskell debugging system;
+- [hlint](https://hackage.haskell.org/package/hlint) - gives suggestions on how to improve your source code;
+- [apply-refact](https://hackage.haskell.org/package/apply-refact) - perform refactorings specified by the refact library;
+- [retrie](https://hackage.haskell.org/package/retrie) - a tool for codemodding Haskell;
+- [hoogle](https://hackage.haskell.org/package/hoogle) - a Haskell API search engine;
+- [ormolu](https://hackage.haskell.org/package/ormolu) - a formatter for Haskell source code;
+- [implicit-hie](https://hackage.haskell.org/package/implicit-hie) - auto-generate a Stack or Cabal multi-component `hie.yaml` file.
 
 Following VSCode extensions are automatically installed after container is started:
 

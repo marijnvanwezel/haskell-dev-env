@@ -1,6 +1,6 @@
 FROM debian:bookworm-slim
 
-ARG GHC_VERSION=9.6.5
+ARG GHC_VERSION=9.8.2
 ARG STACK_VERSION=recommended
 ARG STACK_RESOLVER=nightly
 ARG CABAL_VERSION=recommended
@@ -69,16 +69,20 @@ RUN cabal update && \
     cabal install --haddock-hoogle --minimize-conflict-set \
         fsnotify-0.4.1.0 \
         haskell-dap-0.0.16.0 \
-        ghci-dap-0.0.22.0 \
-        haskell-debug-adapter-0.0.39.0 \
-        hlint-3.6.1 \
-        apply-refact-0.14.0.0 \
-        retrie-1.2.2 \
-        hoogle-5.0.18.3 \
-        ormolu-0.7.2.0
+        ghci-dap-0.0.24.0 \
+        haskell-debug-adapter-0.0.41.0 \
+        hlint-3.10 \
+        apply-refact-0.15.0.0 \
+        retrie-1.2.3 \
+        hoogle-5.0.18.4 \
+        ormolu-0.8.0.0 \
+        implicit-hie-0.1.4.0
 
 # Download local Hoogle database
 RUN hoogle generate --download --haskell
+
+# Install implicit-hie
+RUN stack install implicit-hie
 
 ENV DEBIAN_FRONTEND=dialog
 ENTRYPOINT ["/bin/bash"]
