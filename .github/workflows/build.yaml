@@ -5,6 +5,8 @@ on:
     paths:
       - 'Dockerfile'
       - '.github/workflows/build.yaml'
+    tags:
+      - '*'
 
 jobs:
   build:
