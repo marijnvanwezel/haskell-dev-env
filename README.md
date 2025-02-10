@@ -1,6 +1,6 @@
 # A development container for Haskell
 
-This is an opinionated pre-built [Dev Container](https://containers.dev) for Haskell (GHC 9.8.2).
+This is an opinionated pre-built [Dev Container](https://containers.dev) for Haskell (GHC 9.4.8).
 
 ## Using with Visual Studio Code
 
@@ -26,7 +26,7 @@ The container comes with the following (relevant) software pre-installed:
 - [GNU Bash](https://www.gnu.org/software/bash/);
 - [Git](https://git-scm.com/);
 - [GHCUp](https://www.haskell.org/ghcup/);
-- The [Glasgow Haskell Compiler (GHC)](https://www.haskell.org/ghc/) (version 9.8.2);
+- The [Glasgow Haskell Compiler (GHC)](https://www.haskell.org/ghc/) (version 9.4.8);
 - The [Haskell Language Server (HLS)](https://github.com/haskell/haskell-language-server);
 - [Stack](https://docs.haskellstack.org/en/stable/);
 - [Cabal](https://www.haskell.org/cabal/).
