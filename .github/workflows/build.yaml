@@ -2,11 +2,6 @@ name: Build development container
 
 on:
   push:
-    paths:
-      - 'Dockerfile'
-      - '.github/workflows/build.yaml'
-    tags:
-      - '*'
 
 jobs:
   build:
