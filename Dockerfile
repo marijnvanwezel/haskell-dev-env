@@ -70,8 +70,8 @@ RUN cabal update && \
         fsnotify-0.4.1.0 \
         haskell-dap-0.0.16.0 \
         ghci-dap-0.0.22.0 \
-        haskell-debug-adapter-0.0.37.0 \
-        hlint-3.8 \
+        haskell-debug-adapter-0.0.39.0 \
+        hlint-3.6.1 \
         apply-refact-0.14.0.0 \
         retrie-1.2.3 \
         hoogle-5.0.18.4 \
