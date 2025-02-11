@@ -1,9 +1,9 @@
 FROM debian:bookworm-slim
 
-# https://www.stackage.org/lts-23.8
-ARG GHC_VERSION=9.8.4
+# https://www.stackage.org/lts-22.27
+ARG GHC_VERSION=9.6.5
 ARG STACK_VERSION=recommended
-ARG STACK_RESOLVER=lts-23.8
+ARG STACK_RESOLVER=lts-22.27
 ARG CABAL_VERSION=recommended
 ARG HLS_VERSION=recommended
 
@@ -13,6 +13,7 @@ ENV LANG=C.UTF-8 \
     BOOTSTRAP_HASKELL_NO_UPGRADE=yes \
     GHC_VERSION=${GHC_VERSION} \
     STACK_VERSION=${STACK_VERSION} \
+    STACK_RESOLVER=${STACK_RESOLVER} \
     CABAL_VERSION=${CABAL_VERSION} \
     HLS_VERSION=${HLS_VERSION}
 
@@ -62,7 +63,7 @@ RUN cabal user-config update -f && \
 RUN ((stack ghc -- --version 2>/dev/null) || true) && \
     stack config --system-ghc set system-ghc true --global && \
     stack config --system-ghc set install-ghc false --global && \
-    stack config --system-ghc set resolver lts-23.8
+    stack config --system-ghc set resolver ${STACK_RESOLVER}
 RUN printf "ghc-options:\n  \"\$everything\": -haddock\n" >> ~/.stack/config.yaml
 
 # Install useful dependencies
@@ -72,7 +73,7 @@ RUN cabal update && \
         haskell-dap-0.0.16.0 \
         ghci-dap-0.0.22.0 \
         haskell-debug-adapter-0.0.39.0 \
-        hlint-3.8 \
+        hlint-3.6.1 \
         apply-refact-0.14.0.0 \
         retrie-1.2.3 \
         hoogle-5.0.18.4 \
@@ -83,5 +84,4 @@ RUN cabal update && \
 RUN hoogle generate --download --haskell
 
 ENV DEBIAN_FRONTEND=dialog
-
 ENTRYPOINT ["/bin/bash"]
