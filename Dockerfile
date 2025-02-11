@@ -1,11 +1,11 @@
 FROM debian:bookworm-slim
 
-# https://www.stackage.org/lts-22.27
-ARG GHC_VERSION=9.6.5
-ARG STACK_VERSION=recommended
-ARG STACK_RESOLVER=lts-22.27
-ARG CABAL_VERSION=recommended
-ARG HLS_VERSION=recommended
+# https://www.stackage.org/lts-23.8 (LTS)
+ARG GHC_VERSION=9.8.4
+ARG STACK_VERSION=3.1.1
+ARG STACK_RESOLVER=lts-23.8
+ARG CABAL_VERSION=3.12.1.0
+ARG HLS_VERSION=2.9.0.1
 
 ENV LANG=C.UTF-8 \
     DEBIAN_FRONTEND=noninteractive \
@@ -52,7 +52,9 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 RUN ghcup install ghc ${GHC_VERSION} --set
 RUN ghcup install cabal ${CABAL_VERSION} --set
 RUN ghcup install stack ${STACK_VERSION} --set
-RUN ghcup install hls ${HLS_VERSION} --set
+
+# Compile HLS from source
+RUN ghcup compile hls -g ${HLS_VERSION} --ghc ${GHC_VERSION} --cabal-update --set
 
 # Configure Cabal
 RUN cabal update && cabal new-install cabal-install
@@ -73,11 +75,11 @@ RUN cabal update && \
         haskell-dap-0.0.16.0 \
         ghci-dap-0.0.22.0 \
         haskell-debug-adapter-0.0.39.0 \
-        hlint-3.6.1 \
+        hlint-3.8 \
         apply-refact-0.14.0.0 \
         retrie-1.2.3 \
         hoogle-5.0.18.4 \
-        ormolu-0.7.2.0 \
+        ormolu-0.7.4.0 \
         implicit-hie-0.1.4.0
 
 # Download local Hoogle database
