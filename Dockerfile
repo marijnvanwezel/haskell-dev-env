@@ -77,7 +77,7 @@ RUN cabal update && \
         apply-refact-0.14.0.0 \
         retrie-1.2.3 \
         hoogle-5.0.18.4 \
-        ormolu-0.7.4.0 \
+        ormolu-0.7.2.0 \
         implicit-hie-0.1.4.0
 
 # Download local Hoogle database
