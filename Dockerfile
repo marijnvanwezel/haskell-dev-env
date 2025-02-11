@@ -5,7 +5,6 @@ ARG GHC_VERSION=9.8.4
 ARG STACK_VERSION=3.1.1
 ARG STACK_RESOLVER=lts-23.8
 ARG CABAL_VERSION=3.12.1.0
-ARG HLS_VERSION=2.9.0.1
 
 ENV LANG=C.UTF-8 \
     DEBIAN_FRONTEND=noninteractive \
@@ -66,7 +65,7 @@ RUN ((stack ghc -- --version 2>/dev/null) || true) && \
 RUN printf "ghc-options:\n  \"\$everything\": -haddock\n" >> ~/.stack/config.yaml
 
 # Compile HLS from source
-RUN ghcup compile hls -g ${HLS_VERSION} --ghc ${GHC_VERSION} --cabal-update --set
+RUN ghcup compile hls --ghc ${GHC_VERSION} --git-ref master --cabal-update --set
 
 # Install useful dependencies
 RUN cabal update && \
