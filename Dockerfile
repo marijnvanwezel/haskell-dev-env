@@ -53,9 +53,6 @@ RUN ghcup install ghc ${GHC_VERSION} --set
 RUN ghcup install cabal ${CABAL_VERSION} --set
 RUN ghcup install stack ${STACK_VERSION} --set
 
-# Compile HLS from source
-RUN ghcup compile hls -g ${HLS_VERSION} --ghc ${GHC_VERSION} --cabal-update --set
-
 # Configure Cabal
 RUN cabal update && cabal new-install cabal-install
 RUN cabal user-config update -f && \
@@ -67,6 +64,9 @@ RUN ((stack ghc -- --version 2>/dev/null) || true) && \
     stack config --system-ghc set install-ghc false --global && \
     stack config --system-ghc set resolver ${STACK_RESOLVER}
 RUN printf "ghc-options:\n  \"\$everything\": -haddock\n" >> ~/.stack/config.yaml
+
+# Compile HLS from source
+RUN ghcup compile hls -g ${HLS_VERSION} --ghc ${GHC_VERSION} --cabal-update --set
 
 # Install useful dependencies
 RUN cabal update && \
