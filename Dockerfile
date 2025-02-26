@@ -5,6 +5,7 @@ ARG GHC_VERSION=9.8.4
 ARG STACK_VERSION=3.1.1
 ARG STACK_RESOLVER=lts-23.8
 ARG CABAL_VERSION=3.12.1.0
+ARG HLS_GIT_REF=25c5d82ce09431a1b53dfa1784a276a709f5e479
 
 ENV LANG=C.UTF-8 \
     DEBIAN_FRONTEND=noninteractive \
@@ -14,7 +15,7 @@ ENV LANG=C.UTF-8 \
     STACK_VERSION=${STACK_VERSION} \
     STACK_RESOLVER=${STACK_RESOLVER} \
     CABAL_VERSION=${CABAL_VERSION} \
-    HLS_VERSION=${HLS_VERSION}
+    HLS_GIT_REF=${HLS_GIT_REF}
 
 RUN ulimit -n 8192
 RUN apt-get update --yes && \
@@ -67,7 +68,7 @@ RUN ((stack ghc -- --version 2>/dev/null) || true) && \
 RUN printf "ghc-options:\n  \"\$everything\": -haddock\n" >> ~/.stack/config.yaml
 
 # Compile HLS from source
-RUN ghcup compile hls --ghc ${GHC_VERSION} --git-ref master --cabal-update --set
+RUN ghcup compile hls --ghc ${GHC_VERSION} --git-ref ${HLS_GIT_REF} --set
 
 # Install useful dependencies
 RUN cabal update && \
@@ -86,5 +87,6 @@ RUN cabal update && \
 # Download local Hoogle database
 RUN hoogle generate --download --haskell
 
+# Make the Debian frontend interactive again
 ENV DEBIAN_FRONTEND=dialog
 ENTRYPOINT ["/bin/bash"]
