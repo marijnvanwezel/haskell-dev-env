@@ -25,6 +25,7 @@ The container comes with the following (relevant) software pre-installed:
 - [`debian:bookworm-slim`](https://hub.docker.com/_/debian) as a base image;
 - [GNU Bash](https://www.gnu.org/software/bash/);
 - [Git](https://git-scm.com/);
+- [Neovim](https://neovim.io/);
 - [GHCUp](https://www.haskell.org/ghcup/);
 - The [Glasgow Haskell Compiler (GHC)](https://www.haskell.org/ghc/) (version 9.8.4 LTS);
 - The [Haskell Language Server (HLS)](https://github.com/haskell/haskell-language-server);

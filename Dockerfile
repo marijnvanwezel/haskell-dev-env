@@ -18,9 +18,6 @@ ENV LANG=C.UTF-8 \
 
 RUN ulimit -n 8192
 RUN apt-get update --yes && \
-    apt-get install --yes --no-install-recommends software-properties-common wget && \
-    rm -rf /var/lib/apt/lists/*
-RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
         bash \
         build-essential \
@@ -33,24 +30,29 @@ RUN apt-get update --yes && \
         libncurses-dev \
         libncurses5 \
         libtinfo5 \
+        neovim \
+        software-properties-common \
         sudo \
+        wget \
         zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
 
-# Add GHCUp and Cabal to the PATH
-ENV PATH=${PATH}:/root/.local/bin
-ENV PATH=${PATH}:/root/.ghcup/bin
-ENV PATH=${PATH}:/root/.cabal/bin
-
-RUN echo "export PATH=${PATH}" >> /root/.profile
-
 # Download and install GHCUp
 RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+
+# Add GHCUp to the PATH
+ENV PATH=${PATH}:/root/.ghcup/bin
 
 # Download and install GHC and tooling
 RUN ghcup install ghc ${GHC_VERSION} --set
 RUN ghcup install cabal ${CABAL_VERSION} --set
 RUN ghcup install stack ${STACK_VERSION} --set
+
+# Add Cabal to the PATH
+ENV PATH=${PATH}:/root/.local/bin:/root/.cabal/bin
+
+# Store PATH in .profile
+RUN echo "export PATH=${PATH}" >> /root/.profile
 
 # Configure Cabal
 RUN cabal update && cabal new-install cabal-install
