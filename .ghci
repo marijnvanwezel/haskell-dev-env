@@ -1,19 +1,5 @@
-:set prompt "\ESC[94m\STX  \ESC[m\STX"
-:set prompt-cont "\ESC[1;32mλ| \ESC[m"
-:set +t
-:set +m
-:set +s
-
-:set editor emacs
-
-:set -Wall
-:set -ferror-spans
-:set -freverse-errors
-:set -fprint-expanded-synonyms
-:set -fprint-explicit-foralls
-:set -fprint-explicit-kinds
-:set -ignore-package pretty-simple -package pretty-simple
--- :set -fobject-code
+:set prompt "\ESC[32mλ> \ESC[m"
+:set prompt-cont "\ESC[32mλ| \ESC[m"
 
 :seti -XFlexibleContexts
 :seti -XFlexibleInstances

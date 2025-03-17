@@ -31,7 +31,10 @@
         "haskell.trace.client": "error",
         "haskell.trace.server": "off",
         "haskell.upgradeGHCup": true,
-        "hoogle-vscode.useCabalDependencies": true
+        "haskellShell.ghci.arguments": ["ghci"],
+        "haskellShell.ghci.executablePath": "stack",
+        "hoogle-vscode.maxResults": 25,
+        "hoogle-vscode.url": "http://127.0.0.1:23196"
       }
     }
   }

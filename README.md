@@ -1,6 +1,15 @@
 # A development container for Haskell
 
-This is an opinionated pre-built [Dev Container](https://containers.dev) for Haskell (GHC 9.8.4 LTS).
+This is an opinionated pre-built [Dev Container](https://containers.dev) for Haskell (GHC 9.8.4 LTS), focused on supporting [Stack projects](https://docs.haskellstack.org/en/stable/).
+
+## Features
+
+The following features are supported:
+
+- **Cabal, Stack and HLS support:** Cabal, Stack and HLS come pre-installed.
+- **Integrated GHCi:** By pressing either the yellow lambda symbol in the top-right or by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> and typing `> Haskell: Toggle interactive shell`, you open GHCi for the current file.
+- **Local Hoogle:** The development container comes with a local Hoogle server. This means that Hoogle definitions are available, even when offline. You can search Hoogle by pressing <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>.
+- **Local documentation:** All Hackage documentation is included in the development container, meaning you do not need an internet connection to read documentation. Documentation can be read by hovering over a definition and clicking "Documentation".
 
 ## Using with Visual Studio Code
 
@@ -18,7 +27,24 @@ Follow the steps below to use the Dev Container with Visual Studio Code:
 
 Visual Studio Code supports [Dev Containers](https://code.visualstudio.com/docs/remote/containers) (i.e. using a Docker image as a development environment). It automates the hassle of setting up a proper development environment.
 
-## What's in the box
+## Troubleshooting
+
+This section lists some common problems, and possible ways to fix these problems. If you encounter an issue not listed here, or if the fixes listed do not work for you, please [open an issue](https://github.com/marijnvanwezel/haskell-dev-env/issues/new).
+
+- **Definitions from other files are not found.**
+    - Try running `stack install` in the project directory.
+- **Definitions from dependencies are not found.**
+    - Try restarting Visual Studio Code.
+- **Stuck on `Processing ../..`.**
+    - Try running `stack build` in the project directory.
+- **Code completion and/or checking is not working.**
+    - Try restarting Visual Studio Code.
+    - Try running `stack install` in the project directory.
+- **Something else does not work.**
+    - Try restarting Visual Studio Code.
+    - [Open an issue](https://github.com/marijnvanwezel/haskell-dev-env/issues/new) on GitHub.
+
+## Installed software
 
 The container comes with the following (relevant) software pre-installed:
 

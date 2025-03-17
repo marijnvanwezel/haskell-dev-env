@@ -31,7 +31,9 @@ RUN apt-get update --yes && \
         libncurses-dev \
         libncurses5 \
         libtinfo5 \
+        man \
         neovim \
+        openssh-client \
         software-properties-common \
         sudo \
         wget \
@@ -87,6 +89,18 @@ RUN cabal update && \
 # Download local Hoogle database
 RUN hoogle generate --download --haskell
 
+# Copy entrypoint and make it executable
+COPY --chmod=0755 ./entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Create .ghc configuration folder
+RUN mkdir /root/.ghc
+
+# Add empty GHCi history
+RUN touch /root/.ghc/ghci_history
+
+# Copy GHCi configuration
+COPY ./.ghci /root/.ghc/ghci.conf
+
 # Make the Debian frontend interactive again
 ENV DEBIAN_FRONTEND=dialog
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["entrypoint.sh"]
