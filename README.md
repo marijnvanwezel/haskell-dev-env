@@ -11,7 +11,7 @@ The development container has the following features:
 - **Integrated GHCi:** The development container comes with an integrated GHCi-shell.
 - **Offline support:** Hoogle and Hackage are included locally in the container, meaning you do not need an internet connection to find definitions or read documentation.
 
-To use the integrated GHCi-shell, press the yellow lambda symbol in the top-right corner. To search Hoogle, press <kbd>Alt</kbd> + <kbd>Shift</kdb> + <kbd>H</kdb>.
+To use the integrated GHCi-shell, press the yellow lambda symbol in the top-right corner. To search Hoogle, press <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>.
 
 ## Using with Visual Studio Code
 
