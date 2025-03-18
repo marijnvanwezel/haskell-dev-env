@@ -2,6 +2,8 @@ name: Build development container
 
 on:
   push:
+    paths-ignore:
+      - README.md
 
 jobs:
   build:
