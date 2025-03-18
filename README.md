@@ -7,9 +7,8 @@ This is an opinionated pre-built [Dev Container](https://containers.dev) for Has
 The following features are supported:
 
 - **Cabal, Stack and HLS support:** Cabal, Stack and HLS come pre-installed.
-- **Integrated GHCi:** By pressing either the yellow lambda symbol in the top-right or by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> and typing `> Haskell: Toggle interactive shell`, you open GHCi for the current file.
-- **Local Hoogle:** The development container comes with a local Hoogle server. This means that Hoogle definitions are available, even when offline. You can search Hoogle by pressing <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>.
-- **Local documentation:** All Hackage documentation is included in the development container, meaning you do not need an internet connection to read documentation. Documentation can be read by hovering over a definition and clicking "Documentation".
+- **Integrated GHCi:** By pressing either the yellow lambda symbol in the top-right or by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> and typing `> Haskell: Toggle interactive shell`, an integrated GHCi shell opens.
+- **Offline support:** Both Hoogle and Hackage are included locally in the container, meaning you do not need an internet connection to find definitions or read documentation. You can search Hoogle by pressing <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>.
 
 ## Using with Visual Studio Code
 
