@@ -1,14 +1,17 @@
 # A development container for Haskell
 
-This is an opinionated pre-built [Dev Container](https://containers.dev) for Haskell (GHC 9.8.4 LTS), focused on supporting [Stack projects](https://docs.haskellstack.org/en/stable/).
+This is an opinionated pre-built [Dev Container](https://containers.dev) for Haskell (GHC 9.8.4 LTS).
 
 ## Features
 
-The following features are supported:
+The development container has the following features:
 
-- **Cabal, Stack and HLS support:** Cabal, Stack and HLS come pre-installed.
-- **Integrated GHCi:** By pressing either the yellow lambda symbol in the top-right or by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> and typing `> Haskell: Toggle interactive shell`, an integrated GHCi shell opens.
-- **Offline support:** Both Hoogle and Hackage are included locally in the container, meaning you do not need an internet connection to find definitions or read documentation. You can search Hoogle by pressing <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>.
+- **Pre-configured Cabal, Stack and HLS:** Cabal, Stack and HLS come pre-installed and pre-configured.
+- **Pre-installed development tools:** The development container comes with a number of generic (Git, Neovim, SSH, etc.) and Haskell-specific (ormolu, implicit-hie, retrie, etc.) development tools pre-installed.
+- **Integrated GHCi:** The development container comes with an integrated GHCi-shell.
+- **Offline support:** Hoogle and Hackage are included locally in the container, meaning you do not need an internet connection to find definitions or read documentation.
+
+To use the integrated GHCi-shell, press the yellow lambda symbol in the top-right corner. To search Hoogle, press <kbd>Alt</kbd> + <kbd>Shift</kdb> + <kbd>H</kdb>.
 
 ## Using with Visual Studio Code
 
