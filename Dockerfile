@@ -89,9 +89,6 @@ RUN cabal update && \
 # Download local Hoogle database
 RUN hoogle generate --download --haskell
 
-# Copy entrypoint and make it executable
-COPY --chmod=0755 ./entrypoint.sh /usr/local/bin/entrypoint.sh
-
 # Create .ghc configuration folder
 RUN mkdir /root/.ghc
 
@@ -103,4 +100,4 @@ COPY ./.ghci /root/.ghc/ghci.conf
 
 # Make the Debian frontend interactive again
 ENV DEBIAN_FRONTEND=dialog
-ENTRYPOINT ["entrypoint.sh"]
+CMD nohup hoogle server --port=23196 --local > /dev/null 2>&1 & && /bin/bash
