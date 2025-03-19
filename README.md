@@ -11,7 +11,7 @@ The development container has the following features:
 - **Integrated GHCi:** The development container comes with an integrated GHCi-shell.
 - **Offline support:** Hoogle and Hackage are included locally in the container, meaning you do not need an internet connection to find definitions or read documentation.
 
-To use the integrated GHCi-shell, press the yellow lambda symbol in the top-right corner. To search Hoogle, press <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>.
+To open the integrated GHCi-shell, press <kbd>Alt</kbd> + <kbd>Z</kbd> and then <kbd>7</kbd>. To search Hoogle, press <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>.
 
 ## Using with Visual Studio Code
 
@@ -76,5 +76,10 @@ Following VSCode extensions are automatically installed after container is start
 
 - [Haskell](https://marketplace.visualstudio.com/items?itemName=haskell.haskell);
 - [Haskell GHCi Debugger Adapter](https://marketplace.visualstudio.com/items?itemName=phoityne.phoityne-vscode);
-- [Integrated Haskell Shell](https://marketplace.visualstudio.com/items?itemName=eriksik2.vscode-ghci);
-- [Hoogle for VSCode](https://marketplace.visualstudio.com/items?itemName=jcanero.hoogle-vscode).
+- [GHCi Helper](https://marketplace.visualstudio.com/items?itemName=rcook.ghci-helper);
+- [Hoogle for VSCode](https://marketplace.visualstudio.com/items?itemName=jcanero.hoogle-vscode);
+- [Hackage Theme](https://marketplace.visualstudio.com/items?itemName=dmarticus.hackage-theme);
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker);
+- [VSCode PDF](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf);
+- [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml);
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one).
