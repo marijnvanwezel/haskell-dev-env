@@ -100,4 +100,6 @@ COPY ./.ghci /root/.ghc/ghci.conf
 
 # Make the Debian frontend interactive again
 ENV DEBIAN_FRONTEND=dialog
-CMD nohup hoogle server --port=23196 --local > /dev/null 2>&1 & && /bin/bash
+
+SHELL ["/bin/bash", "-c"]
+ENTRYPOINT nohup hoogle server --port=23196 --local > /dev/null 2>&1 & && /bin/bash
