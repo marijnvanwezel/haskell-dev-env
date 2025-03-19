@@ -8,7 +8,7 @@
       "extensions": [
         "haskell.haskell",
         "phoityne.phoityne-vscode",
-        "rcook.ghci-helper",
+        "eriksik2.vscode-ghci",
         "jcanero.hoogle-vscode",
         "dmarticus.hackage-theme",
         "streetsidesoftware.code-spell-checker",
@@ -41,8 +41,10 @@
         "haskell.plugin.hlint.diagnosticsOn": true,
         "haskell.plugin.ormolu.config.external": true,
         "haskell.plugin.rename.config.crossModule": true,
-        "hoogle-vscode.maxResults": 100,
-        "hoogle-vscode.url": "http://127.0.0.1:23196"
+        "hoogle-vscode.maxResults": 250,
+        "hoogle-vscode.url": "http://127.0.0.1:23196",
+        "haskellShell.ghci.arguments": ["ghci"],
+        "haskellShell.ghci.executablePath": "stack"
       }
     }
   }
