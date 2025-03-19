@@ -2,7 +2,7 @@
   "name": "DevContainer for Haskell (GHC, Stack, Cabal, HIE, LSP, DAP, etc.)",
   "runArgs": [],
   "image": "ghcr.io/marijnvanwezel/haskell-dev-env:master",
-  "postStartCommand": "nohup bash -c 'hoogle server --port=23196 --local > /dev/null 2>&1 &'",
+  "postStartCommand": "nohup bash -c 'hoogle server --port=23196 --local &' > /dev/null 2>&1",
   "customizations": {
     "vscode": {
       "extensions": [
