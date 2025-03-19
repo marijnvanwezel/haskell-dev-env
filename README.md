@@ -2,7 +2,7 @@
 
 This is an opinionated pre-built [Dev Container](https://containers.dev) for Haskell (GHC 9.8.4 LTS).
 
-<img src="./docs/example.gif" alt="GIF showing the development container in use" width="50%">
+![GIF showing the development container in use](./docs/example.gif)
 
 ## Features
 
