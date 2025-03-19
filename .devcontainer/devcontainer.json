@@ -2,7 +2,7 @@
   "name": "DevContainer for Haskell (GHC, Stack, Cabal, HIE, LSP, DAP, etc.)",
   "runArgs": [],
   "image": "ghcr.io/marijnvanwezel/haskell-dev-env:master",
-  "postStartCommand": "nohup bash -c 'hoogle server --port=23196 --local &'",
+  "postStartCommand": "nohup bash -c 'hoogle server --port=23196 --local > /dev/null 2>&1 &'",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -41,7 +41,7 @@
         "haskell.plugin.hlint.diagnosticsOn": true,
         "haskell.plugin.ormolu.config.external": true,
         "haskell.plugin.rename.config.crossModule": true,
-        "hoogle-vscode.maxResults": 25,
+        "hoogle-vscode.maxResults": 100,
         "hoogle-vscode.url": "http://127.0.0.1:23196"
       }
     }
