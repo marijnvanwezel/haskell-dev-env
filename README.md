@@ -76,7 +76,8 @@ Following VSCode extensions are automatically installed after container is start
 
 - [Haskell](https://marketplace.visualstudio.com/items?itemName=haskell.haskell);
 - [Haskell GHCi Debugger Adapter](https://marketplace.visualstudio.com/items?itemName=phoityne.phoityne-vscode);
-- [Integrated Haskell Shell](https://marketplace.visualstudio.com/items?itemName=eriksik2.vscode-ghci);- [Hoogle for VSCode](https://marketplace.visualstudio.com/items?itemName=jcanero.hoogle-vscode);
+- [Integrated Haskell Shell](https://marketplace.visualstudio.com/items?itemName=eriksik2.vscode-ghci);
+- [Hoogle for VSCode](https://marketplace.visualstudio.com/items?itemName=jcanero.hoogle-vscode);
 - [Hackage Theme](https://marketplace.visualstudio.com/items?itemName=dmarticus.hackage-theme);
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker);
 - [VSCode PDF](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf);
