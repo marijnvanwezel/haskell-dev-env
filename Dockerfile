@@ -73,7 +73,7 @@ RUN ghcup compile hls --ghc ${GHC_VERSION} --git-ref ${HLS_REF} --set
 
 # Install useful dependencies
 RUN stack update && \
-    stack install \
+    stack install --allow-newer \
       fsnotify \
       haskell-dap \
       ghci-dap \
