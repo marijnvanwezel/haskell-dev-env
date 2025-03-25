@@ -69,7 +69,7 @@ RUN ((stack ghc -- --version 2>/dev/null) || true) && \
 RUN printf "ghc-options:\n  \"\$everything\": -haddock\n" >> ~/.stack/config.yaml
 
 # Compile HLS from source
-RUN ghcup compile hls --ghc ${GHC_VERSION} --git-ref ${HLS_GIT_REF} --set
+RUN ghcup compile hls --ghc ${GHC_VERSION} --git-ref ${HLS_REF} --set
 
 # Install useful dependencies
 RUN stack update && \
