@@ -1,11 +1,10 @@
 FROM debian:bookworm-slim
 
-# https://www.stackage.org/lts-23.8 (LTS)
 ARG GHC_VERSION=9.8.4
 ARG STACK_VERSION=3.1.1
 ARG STACK_RESOLVER=lts-23.8
 ARG CABAL_VERSION=3.12.1.0
-ARG HLS_GIT_REF=25c5d82ce09431a1b53dfa1784a276a709f5e479
+ARG HLS_REF=25c5d82ce09431a1b53dfa1784a276a709f5e479
 
 ENV LANG=C.UTF-8 \
     DEBIAN_FRONTEND=noninteractive \
@@ -15,7 +14,7 @@ ENV LANG=C.UTF-8 \
     STACK_VERSION=${STACK_VERSION} \
     STACK_RESOLVER=${STACK_RESOLVER} \
     CABAL_VERSION=${CABAL_VERSION} \
-    HLS_GIT_REF=${HLS_GIT_REF}
+    HLS_REF=${HLS_REF}
 
 RUN ulimit -n 8192
 RUN apt-get update --yes && \
@@ -73,18 +72,18 @@ RUN printf "ghc-options:\n  \"\$everything\": -haddock\n" >> ~/.stack/config.yam
 RUN ghcup compile hls --ghc ${GHC_VERSION} --git-ref ${HLS_GIT_REF} --set
 
 # Install useful dependencies
-RUN cabal update && \
-    cabal install --haddock-hoogle --minimize-conflict-set \
-        fsnotify-0.4.1.0 \
-        haskell-dap-0.0.16.0 \
-        ghci-dap-0.0.22.0 \
-        haskell-debug-adapter-0.0.39.0 \
-        hlint-3.8 \
-        apply-refact-0.14.0.0 \
-        retrie-1.2.3 \
-        hoogle-5.0.18.4 \
-        ormolu-0.7.4.0 \
-        implicit-hie-0.1.4.0
+RUN stack update && \
+    stack install \
+      fsnotify \
+      haskell-dap \
+      ghci-dap \
+      haskell-debug-adapter \
+      hlint \
+      apply-refact \
+      retrie \
+      hoogle \
+      ormolu \
+      implicit-hie
 
 # Download local Hoogle database
 RUN hoogle generate --download --haskell
